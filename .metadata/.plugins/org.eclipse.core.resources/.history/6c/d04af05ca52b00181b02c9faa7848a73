@@ -16,27 +16,28 @@ public class Word implements Comparable<Word>
 
 	}
 
-	
+	/**
 	private int numVowels()
 	{
 		String vowels = "AEIOUaeiou";
 		int vowelCount=0;
 		for (int i = 0; i<word.length(); i++)
 		{
-			if (vowels.indexOf(word.charAt(i))!=-1)
-			{ 
-				vowelCount++;
-			}
-			else
+			for(int j =0; j<word.length(); j++)
 			{
-				vowelCount = vowelCount;
+				if (word.charAt(i) == vowels.charAt(j))
+				{
+					vowelCount++;
+				}
+				else
+				{
+					vowelCount = vowelCount;
+				}
 			}
 		}
 		return vowelCount;
 	}
-	
-	public int compare
-	
+	**/
 	
 	/**
 
