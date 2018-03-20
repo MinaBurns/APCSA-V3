@@ -23,16 +23,13 @@ public class Word implements Comparable<Word>
 		int vowelCount=0;
 		for (int i = 0; i<word.length(); i++)
 		{
-			for(int j = 0; j<vowels.length(); j++)
+			if (vowels.indexOf(word.charAt(i))!=-1)
+			{ 
+				vowelCount++;
+			}
+			else
 			{
-				if (vowels.charAt(j)==word.charAt(i))
-				{ 
-					vowelCount++;
-				}
-				else
-				{
-					vowelCount = vowelCount;
-				}
+				vowelCount = vowelCount;
 			}
 		}
 		return vowelCount;
