@@ -18,10 +18,7 @@ public class FancyWord
 
    public FancyWord(String s)
 	{
-	   for(int i = 0; i<s.length(); i++)
-	   {
-		   mat[0][i]= s.charAt(i);
-	   }
+
 	   
 
 

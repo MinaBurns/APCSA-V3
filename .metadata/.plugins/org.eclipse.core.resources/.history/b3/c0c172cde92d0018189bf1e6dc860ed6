@@ -28,16 +28,16 @@ public class AtCounter
 
 	public int countAts(int r, int c)
 	{
-		if((atMat[r][c]=='@')&& (r<atMat.length) && (c<atMat[0].length)&&r>=0&&c>=0)
+		if((atMat[r][c]=='@')&& (r<atMat.length) && (c<atMat[0].length)&&(r>=0)&&(c>=0))
 		{
 			atCount++;
-			//char save = atMat[r][c];
+			char save = atMat[r][c];
 			atMat[r][c]='0';
 			countAts(r,c-1);
 			countAts(r,c+1);
 			countAts(r-1,c);
 			countAts(r+1,c);
-			//atMat[r][c]= save;
+			atMat[r][c]= save;
 		}
 		return 0;
 		

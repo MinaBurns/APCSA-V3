@@ -12,6 +12,5 @@ public class ElevensGUIRunner {
 		Board board = new ElevensBoard();
 		CardGameGUI gui = new CardGameGUI(board);
 		gui.displayGame();
-		
 	}
 }
