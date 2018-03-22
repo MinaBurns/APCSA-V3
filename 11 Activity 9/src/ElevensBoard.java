@@ -53,6 +53,15 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
+		if(selectedCards.size()==2)
+		{
+			return(containsPairSum11(selectedCards));
+		}
+		if(selectedCards.size()==3)
+		{
+			return(containsJQK(selectedCards));
+		}
+		return false;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
 	}
 
@@ -66,7 +75,10 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		if(containsPairSum11(cardIndexes())||containsJQK(cardIndexes()))
+			return true;
+		else
+			return false;
 	}
 
 	/**
@@ -78,21 +90,47 @@ public class ElevensBoard extends Board {
 	 *              contain an 11-pair; false otherwise.
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
-		for(int i = 0; i< selectedCards.size(); i++)
+		//int ptvalue = 0;
+		for (int i = 0; i<selectedCards.size()-1; i++)
 		{
-			for(int j =0; j<RANKS.size(); j++)
-			if(selectedCards[i]==ranks[])
-			for(int j = 0; j <selectedCards.size(); j++)
+			for (int j = 0; j<selectedCards.size(); j++)
 			{
-				if(POINT_VALUES[i]+POINT_VALUES[j]==11)
+				if(cardAt(selectedCards.get(i)).pointValue() +cardAt(selectedCards.get(j)).pointValue()==11)
+				{
 					return true;
+				}
 			}
+			
 		}
 		return false;
+		/**
+		for(int i = 0; i< selectedCards.size(); i++)
+		{
+			for (int j = 0; j<POINT_VALUES.length; j++)
+			{
+				if (selectedCards.get(i) == POINT_VALUES[j])
+				{
+					ptvalue = POINT_VALUES[j];
+				}
+			}
+			for(int k = 0; k<selectedCards.size(); k++)
+			{
+				for(int l =0; l<POINT_VALUES.length; l++)
+				{
+					if(selectedCards.get(i)==POINT_VALUES[l])
+					{
+						if(ptvalue+POINT_VALUES[l]==11)
+						{
+							return true;
+						}
+					}
+				}
+			}
+			**/
+		}
 		
 		
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-	}
 
 	/**
 	 * Check for a JQK in the selected cards.
@@ -103,6 +141,34 @@ public class ElevensBoard extends Board {
 	 *              include a jack, a queen, and a king; false otherwise.
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		boolean isJack = false;
+		boolean isQueen = false;
+		boolean isKing = false;
+		if(selectedCards.size()<3)
+		{
+			return false;
+		}
+		for (int i = 0; i<selectedCards.size(); i++)
+		{
+			if(cardAt(selectedCards.get(i)).rank()=="jack")
+			{
+				isJack = true;
+			}
+			if(cardAt(selectedCards.get(i)).rank()== RANKS[11])
+			{
+				isQueen = true;
+			}
+			if(cardAt(selectedCards.get(i)).rank()== RANKS[12])
+			{
+				isKing = true;
+			}
+		}
+		if(isJack&&isQueen&&isKing)
+		{
+			return true;
+		}
+		return false;
+		
+		
 	}
 }
