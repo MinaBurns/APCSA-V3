@@ -13,31 +13,24 @@ public class FancyWord
 
 	public FancyWord()
 	{
-		mat = new char[0][0];
+		
 	}
 
    public FancyWord(String s)
 	{
-	   int end = s.length();
-	   mat = new char[end][end];
 	   for(int i = 0; i<s.length(); i++)
 	   {
 		   mat[0][i]= s.charAt(i);
 	   }
 	   
-	   
+
+
 	}
 
 	public String toString()
 	{
 		String output="";
-		//if(mat.length%2==0)
-		//{
-			//for (int i = 0; i<mat.length; i++)
-			//{
-				//output = output+mat
-			//}
-		//}
+
 
 
 
