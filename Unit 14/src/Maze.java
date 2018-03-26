@@ -68,8 +68,15 @@ public class Maze
 			}
 			output = output + "\n";
 		}
-		hasExitPath(0,0);
-		output = output+ exitFound;
+		if(exitFound = true)
+		{
+			output = output+ "exit found";
+		}
+		else
+		{
+			output = output + "exit not found";
+		}
+		
 		return output;
 	}
 }
