@@ -10,6 +10,8 @@ public class AtCounter
 {
    private char[][] atMat;
    private int atCount;
+   int row;
+   int col;
 
 	public AtCounter()
 	{
@@ -28,7 +30,9 @@ public class AtCounter
 
 	public int countAts(int r, int c)
 	{
-		if((atMat[r][c]=='@')&& (r<atMat.length) && (c<atMat[0].length)&&r>=0&&c>=0)
+		row = r;
+		col = c;
+		if(r>=0 && c>=0 && r<atMat.length && c < atMat.length && atMat[r][c] == '@')
 		{
 			atCount++;
 			//char save = atMat[r][c];
@@ -53,7 +57,7 @@ public class AtCounter
 	public String toString()
 	{
 		String output="";
-		output+=getAtCount()+" @s connected.";
+		output+= row + ", " + col+ " has " + getAtCount()+" @s connected.";
 		return output;
 	}
 }

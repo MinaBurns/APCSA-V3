@@ -13,13 +13,19 @@ public class TicTacToe
 
 	public TicTacToe()
 	{
-
-
+		mat = new char[0][0];
 	}
 
 	public TicTacToe(String game)
 	{
-
+		for(int i = 0; i<game.length(); i++)
+		{
+			for(int j =0; j<2; j++)
+			{
+				mat[i][j]=game.charAt(k)
+			}
+			
+		}
 
 
 

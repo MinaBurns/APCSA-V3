@@ -4,6 +4,7 @@
 //Class - 
 //Lab  -
 
+import java.util.Arrays;
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -20,28 +21,33 @@ public class FancyWord
 	{
 	   int end = s.length();
 	   mat = new char[end][end];
+	   for(char[] row: mat)
+	   {
+		   Arrays.fill(row, ' ');
+	   }
+	   end = s.length()-1;
 	   for(int i = 0; i<s.length(); i++)
 	   {
+		   end = s.length()-1-i;
 		   mat[0][i]= s.charAt(i);
+		   mat[end][i]= s.charAt(i);
+		   mat[i][i] = s.charAt(i);
+		   mat[s.length()-1][i]= s.charAt(i);
 	   }
-	   
 	   
 	}
 
 	public String toString()
 	{
 		String output="";
-		//if(mat.length%2==0)
-		//{
-			//for (int i = 0; i<mat.length; i++)
-			//{
-				//output = output+mat
-			//}
-		//}
-
-
-
-
+		for(int i = 0; i<mat.length; i++)
+		{
+			for(int a = 0; a<mat[i].length; a++)
+			{
+				output = output+mat[a][i];
+			}
+			output = output +"\n";
+		}
 		return output+"\n\n";
 	}
 }

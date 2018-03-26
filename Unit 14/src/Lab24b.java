@@ -20,9 +20,6 @@ public class Lab24b
 		{
 			String word = file.next();
 			FancyWord test = new FancyWord(word);
-
-
-
 	   }
 	}
 }
