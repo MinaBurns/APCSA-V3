@@ -47,7 +47,12 @@ public class FancyWords
 				{
 					output = output + wordRay[c].charAt(r);
 				}
+				else
+				{
+					output = output + " ";
+				}
 			}
+			output = output + "\n";
 		}
 
 

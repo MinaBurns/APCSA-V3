@@ -20,24 +20,27 @@ public class Lab15e
 		System.out.println();
 		
 		//test case 2	
+		int[] two = NumberSort.getSortedDigitArray(901912468);
+		for(int item : two)
+		{
+			System.out.print(item + " ");
+		}
+		System.out.println();
 		
-		
-	
-	
-	
-	
-	
-	
-		
-		
-		
-			
 
 		//test case 3
+		int[] three = NumberSort.getSortedDigitArray(864213507);
+		for(int item : three)
+		{
+			System.out.print(item + " ");
+		}
+		System.out.println();
 		
 		
 		
-	
+		
+		
+
 	
 	
 	

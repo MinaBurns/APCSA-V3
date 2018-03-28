@@ -17,15 +17,12 @@ public class Lab15d
 	{
 		Scanner file = new Scanner(new File("C:\\Users\\burnsc6389\\Desktop\\lab15d.dat"));
 		int length = file.nextInt();
-		file.next();
+		file.nextLine();
 		for(int i = 0; i<length; i++)
 		{
 			FancyWords test = new FancyWords(file.nextLine());
 			System.out.println(test.toString());
 		}
-
-
-
 
 	}
 }

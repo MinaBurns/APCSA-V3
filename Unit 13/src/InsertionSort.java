@@ -14,8 +14,7 @@ class InsertionSort
 
 	public InsertionSort()
 	{
-
-
+		ArrayList<String> list = new ArrayList<String>();
 
 	}
 
@@ -23,7 +22,14 @@ class InsertionSort
 	public void add( String  word)
 	{
 		int loc = 0;
-
+		for(int i = 0; i<list.size(); i++)
+		{
+			if(word == list.get(i))
+			{
+				return;
+			}
+		}
+		
 
 
 

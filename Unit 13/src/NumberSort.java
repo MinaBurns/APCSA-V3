@@ -18,7 +18,7 @@ public class NumberSort
 	private static int getNumDigits(int number)
 	{
 		int count = 0;
-		while(number/10!=0)
+		while(number>0)
 		{
 			count++;
 			number=number/10;
@@ -35,19 +35,19 @@ public class NumberSort
 			sorted[i]=number%10;
 			number = number/10;
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		for(int i = 0; i<sorted.length-1; i++)
+		{
+			for(int j = 0; j<sorted.length-1; j++)
+			{
+				if (sorted[j+1]<sorted[j])
+				{
+					int temp = sorted[j+1];
+					sorted[j+1] = sorted[j];
+					sorted[j]=temp;
+				}
+			}
+			
+		}
 		return sorted;
 	}
 }
