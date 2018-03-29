@@ -21,7 +21,7 @@ public class QuickSort
 
 	private static void quickSort(Comparable[] list, int low, int high)
 	{
-		if(low<high)
+		while(low<high)
 		{
 			int split = partition(list, low, high);
 			quickSort(list, low, split);
