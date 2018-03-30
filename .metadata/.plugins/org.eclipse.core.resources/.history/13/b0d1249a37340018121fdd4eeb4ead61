@@ -36,14 +36,6 @@ public class Block implements Locatable
 		setColor(c);
 	}
 	
-	public Block (int x, int y, int width, int height)
-	{
-		setX(x);
-		setY(y);
-		setWidth(width);
-		setHeight(height);
-		color = Color.white;
-	}
 	
    //add the other set methods
    

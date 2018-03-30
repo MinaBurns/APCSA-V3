@@ -29,30 +29,22 @@ public class Block implements Locatable
 	//add other Block constructors - x , y , width, height, color
 	public Block (int x, int y, int width, int height, Color c)
 	{
-		setX(x);
-		setY(y);
+		setXPos(x);
+		setYPos(y);
 		setWidth(width);
 		setHeight(height);
 		setColor(c);
 	}
 	
-	public Block (int x, int y, int width, int height)
-	{
-		setX(x);
-		setY(y);
-		setWidth(width);
-		setHeight(height);
-		color = Color.white;
-	}
 	
    //add the other set methods
    
-	public void setX(int x)
+	public void setXPos(int x)
 	{
 		xPos = x;
 	}
 	
-	public void setY(int y)
+	public void setYPos(int y)
 	{
 		yPos = y;
 	}
@@ -71,12 +63,6 @@ public class Block implements Locatable
    {
 	   color = col;
 
-   }
-   
-   public void setPos(int x, int y)
-   {
-	   xPos = x;
-	   yPos = y;
    }
    
    public int getX()
@@ -132,7 +118,6 @@ public class Block implements Locatable
 	public String toString()
 	{
 		String output = "";
-		output = output + "x and y position;" + getX() + ", " + getY() + "\n" + "width: " + getWidth() + "\n" + "height:" + getHeight() + "\n" + "color: " + getColor();
 		
 		return output;
 	}
