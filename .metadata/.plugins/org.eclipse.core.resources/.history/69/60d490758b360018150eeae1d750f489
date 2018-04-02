@@ -1,0 +1,144 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Ball extends Block
+{
+	private int xSpeed;
+	private int ySpeed;
+	public int width;
+	public int height;
+	public int xPos;
+	public int yPos;
+	
+	private Color color;
+
+	public Ball()
+	{
+		super(200,200);
+		xSpeed = 3;
+		ySpeed = 1;
+	}
+
+	//add the other Ball constructors
+	public Ball(int xPos, int yPos, int width, int height, Color c, int xSpeed, int ySpeed)
+	{
+		setxPos(xPos);
+		setyPos(yPos);
+		setWidth(width);
+		setHeight(height);
+		setColor(c);
+		setxSpeed(xSpeed);
+		setySpeed(ySpeed);
+	}
+	
+	public void setxSpeed(int x)
+	{
+		xSpeed = x;
+	}
+	
+	public void setySpeed(int y)
+	{
+		ySpeed = y;
+	}
+	   
+	public void setxPos(int x)
+	{
+		xPos = x;
+	}
+	
+	public void setyPos(int y)
+	{
+		yPos = y;
+	}
+	
+	public void setWidth(int w)
+	{
+		width = w;
+	}
+	
+	public void setHeight(int h)
+	{
+		height = h;
+	}
+   
+	public int getX()
+	{
+		return xPos;
+	}
+	
+	public int getY()
+	{
+		return yPos;
+	}
+	
+	public int getWidth()
+	{
+		return width;
+	}
+	
+	public int getHeight()
+	{
+		return height;
+	}
+
+  public Color getColor()
+  {
+	  return color;
+
+  }
+  
+  public int getxSpeed()
+  {
+	  return xSpeed;
+  }
+  
+  public int getySpeed()
+  {
+	  return ySpeed;
+  }
+   
+
+   public void moveAndDraw(Graphics window)
+   {
+   	//draw a white ball at old ball location
+	   draw(window, Color.white);
+
+      setX(getX()+xSpeed);
+      setY(getY() + ySpeed);
+      draw(window);
+		//setY
+
+		//draw the ball at its new location
+   }
+   
+	public boolean equals(Ball obj)
+	{
+		Ball other = (Ball)obj;
+		if(xPos==other.getX() && getY()==other.getY() && getWidth() == other.getWidth() && getHeight() == other.getHeight() && getColor() == other.getColor() && getxSpeed() ==other.getxSpeed() && getySpeed() == other.getySpeed())
+		{
+			return true;
+		}
+
+		return false;
+	}   
+	
+	public String toString()
+	{
+		String output = "";
+		output = output + "x and y position;" + getX() + ", " + getY() + "\n";
+		output = output+ "width: " + getWidth() + "\n";
+		output = output + "height:" + getHeight() + "\n";
+		output = output + "color: " + getColor() + "\n";
+		output = output + "X Speed: " + getxSpeed() + "\n";
+		output = output + "Y Speed: " + getySpeed() + "\n";
+		
+		return output;
+	}
+	
+}

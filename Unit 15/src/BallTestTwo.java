@@ -10,10 +10,11 @@ import java.awt.Graphics2D;
 import java.awt.Canvas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static java.lang.System.*;
 
 class BallTestTwo extends Canvas implements Runnable
 {
-	private Ball ball;
+	private Ball five;
 
 	public BallTestTwo()
 	{
@@ -21,8 +22,29 @@ class BallTestTwo extends Canvas implements Runnable
 		setVisible(true);
 
 		//instantiate a new Ball
-
-
+		five = new Ball(100,100,30,50,Color.BLUE,5,6);
+		five.equals(five);
+		
+		five.setxPos(250);
+		out.println(five);
+		
+		five.setyPos(250);
+		out.println(five);
+		
+		five.setWidth(80);
+		out.println(five);
+		
+		five.setHeight(75);
+		out.println(five);
+		
+		five.setxPos(4);
+		out.println(five);
+		
+		five.setyPos(2);
+		out.println(five);
+		   
+		five.setColor(Color.green);
+		out.println(five);
 		//test the Ball thoroughly
 		
 
@@ -39,16 +61,16 @@ class BallTestTwo extends Canvas implements Runnable
 
 	public void paint(Graphics window)
 	{
-		ball.moveAndDraw(window);
+		five.moveAndDraw(window);
 
-		if(!(ball.getX()>=10 && ball.getX()<=550))
+		if(!(five.getX()>=10 && five.getX()<=550))
 		{
-			ball.setXSpeed(-ball.getXSpeed());
+			five.setXSpeed(-five.getXSpeed());
 		}
 
-		if(!(ball.getY()>=10 && ball.getY()<=450))
+		if(!(five.getY()>=10 && five.getY()<=450))
 		{
-			ball.setYSpeed(-ball.getYSpeed());
+			five.setYSpeed(-five.getYSpeed());
 		}
 	}
 	

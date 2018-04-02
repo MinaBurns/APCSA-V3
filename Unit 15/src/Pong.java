@@ -28,7 +28,7 @@ public class Pong extends Canvas implements KeyListener, Runnable
 	{
 		//set up all variables related to the game
 		ball = new Ball(10,100,10,10, Color.blue,2, 1);
-		leftPaddle = new Paddle
+		leftPaddle = new Paddle(100,100,30,20, Color.GREEN,6);
 
 
 
