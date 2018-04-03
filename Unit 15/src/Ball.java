@@ -7,7 +7,7 @@
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Ball extends Block
+public class Ball extends Block implements Collide
 {
 	private int xSpeed;
 	private int ySpeed;
@@ -100,4 +100,49 @@ public class Ball extends Block
    {
    	return super.toString()+" "+xSpeed+" "+ySpeed;
    }
+
+ @Override
+public boolean didCollideLeft(Object obj) {
+	// TODO Auto-generated method stub
+	Paddle paddle = (Paddle)obj;
+	if (getX()<=paddle.getX()+paddle.getWidth()&&getX()>paddle.getX()&&(getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+		return true;
+	}
+	return false;
+}
+
+@Override
+public boolean didCollideRight(Object obj) {
+	Paddle paddle = (Paddle)obj;
+	if (getX()+getWidth()>=paddle.getX()&&getX()<paddle.getX()&&(getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+		return true;
+	}
+	return false;
+}
+
+@Override
+public boolean didCollideTop(Object obj) {
+	Paddle paddle = (Paddle)obj;
+	if (getY()+getHeight()>=paddle.getY() && getY() < paddle.getY()+paddle.getHeight() && (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
+		//if ((getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())
+			//	||getY()>=paddle.getY() && getY()<paddle.getY()+paddle.getHeight()){
+			return true;
+		}
+		return false;
+}
+
+@Override
+public boolean didCollideBottom(Object obj) {
+	// TODO Auto-generated method stub
+	Paddle paddle = (Paddle) obj;
+	if (getY()+getHeight()>paddle.getY() && getY() <= paddle.getY()+paddle.getHeight() && (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
+	//if ((getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())
+			//||getY()+getHeight()>=paddle.getY()&&getY()+getHeight()<paddle.getY()+paddle.getHeight()){
+				return true;
+						
+			}
+	return false;
+}
+
+
 }

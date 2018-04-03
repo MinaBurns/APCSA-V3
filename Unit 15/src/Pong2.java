@@ -249,3 +249,54 @@ public class Pong2 extends Canvas implements KeyListener, Runnable
       }
   	}	
 }
+ball.setXSpeed(0);
+ball.setYSpeed(0);
+if(ball.getX() <= leftPaddle.getX()){
+		graphToBack.setColor(Color.white);
+		graphToBack.drawString("Right Player: " + rightPoints, 300, 500);
+		rightPoints++;
+		graphToBack.setColor(Color.red);
+		graphToBack.drawString("Right Player: " + rightPoints, 300, 500);
+		ball.draw(graphToBack, Color.WHITE);
+		ball.setXSpeed(-(ball.getXSpeed()));
+		ball.setYSpeed(-(ball.getYSpeed()));
+		//ball.setX(ball.getX()+1);
+		ball.moveAndDraw(graphToBack);
+	}
+	else if (ball.getX() >= rightPaddle.getX()+rightPaddle.getWidth())
+	{
+		graphToBack.setColor(Color.WHITE);
+		graphToBack.drawString("Left Player: " + leftPoints, 200, 500);
+		leftPoints++;
+		graphToBack.setColor(Color.RED);
+		graphToBack.drawString("Left Player: " + leftPoints, 200, 500);
+		//ball.setX(ball.getX()-1);
+		ball.moveAndDraw(graphToBack);
+	}
+	ball.draw(graphToBack, Color.WHITE);
+	ball.setXSpeed(-(ball.getXSpeed()));
+	ball.setYSpeed(-(ball.getYSpeed()));
+	ball.moveAndDraw(graphToBack);
+
+
+/*
+if(ball.getX() <= leftPaddle.getX()){
+graphToBack.setColor(Color.white);
+graphToBack.drawString("Right Player: " + rightPoints, 300, 500);
+rightPoints++;
+graphToBack.setColor(Color.red);
+graphToBack.drawString("Right Player: " + rightPoints, 300, 500);
+}
+else if (ball.getX() >= rightPaddle.getX()+rightPaddle.getWidth())
+{
+graphToBack.setColor(Color.WHITE);
+graphToBack.drawString("Left Player: " + leftPoints, 200, 500);
+leftPoints++;
+graphToBack.setColor(Color.RED);
+graphToBack.drawString("Left Player: " + leftPoints, 200, 500);
+}
+ball.draw(graphToBack, Color.WHITE);
+ball = new Ball(10,100,10,10, Color.blue, -(ball.getX()), -(ball.getY()));
+//ball = new Ball(ball.getX(), ball.getY(), ball.getWidth(), ball.getHeight(), ball.getColor(), -(ball.getXSpeed()), -(ball.getYSpeed()));
+ball.moveAndDraw(graphToBack);
+*/
