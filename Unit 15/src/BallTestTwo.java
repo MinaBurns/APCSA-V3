@@ -22,9 +22,10 @@ class BallTestTwo extends Canvas implements Runnable
 		setVisible(true);
 
 		//instantiate a new Ball
-		five = new Ball(100,100,30,50,Color.BLUE,5,6);
+		five = new Ball(100,100,30,50,Color.BLUE,2,2);
 		five.equals(five);
 		
+		/*
 		five.setxPos(250);
 		out.println(five);
 		
@@ -49,6 +50,7 @@ class BallTestTwo extends Canvas implements Runnable
 		
 
 		//test all constructors
+		 */
 
 
 		new Thread(this).start();

@@ -1,8 +1,8 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//ï¿½ A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
-//Lab  -
+//Lab  - 
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,127 +11,63 @@ public class Paddle extends Block
 {
    //instance variables
    private int speed;
-   private int xPos;
-   private int yPos;
-   private int width;
-   private int height;
-   
-   private Color color;
 
    public Paddle()
    {
-		super(10,10);
-      speed =5;
+	   super(10,10,10,10);
+	   speed =5;
    }
-
- //x, y, wid, ht, color, ySpd
-   //add the other Paddle constructors
 
    public Paddle(int x, int y)
    {
-	   xPos = x;
-	   yPos = y;
-	   width = 1;
-	   height = 1;
-	   color = Color.black;
-	   speed = 1;
+	   super(x,y,20,40,Color.red);
+	   speed = 5;
    }
 
-   public Paddle(int x, int y, int wid)
+   public Paddle(int x, int y, int s)
    {
-	   xPos = x;
-	   yPos = y;
-	   width = wid;
-	   height = 1;
-	   color = Color.black;
-	   speed = 1;
-   }
-   
-   public Paddle(int x, int y, int wid, int ht, int spd)
-   {
-	   xPos = x;
-	   yPos = y;
-	   width = wid;
-	   height = ht;
-	   color = Color.black;
-	   speed = spd;
-   }
-   
-   public Paddle(int x, int y, int wid, int ht, Color col, int spd)
-   {
-	   xPos = x;
-	   yPos = y;
-	   width = wid;
-	   height = ht;
-	   color = Color.black;
-	   speed = spd;
+	   super(x,y,20,40,Color.red);
+	   speed =s;
    }
 
-   public int getX()
+   public Paddle(int x, int y, int wid, int ht, int s)
    {
-	   return xPos;
+	   super(x,y,wid,ht,Color.red);
+	   speed =s;
    }
-   
-   public int getY()
+
+   public Paddle(int x, int y, int wid, int ht, Color col, int s)
    {
-	   return yPos;
+	   super(x,y,wid,ht,col);
+	   speed =s;
    }
-   
-   public int getWidth()
+
+   public void setSpeed( int s  )
    {
-	   return width;
-   }
-   
-   public int getHeight()
-   {
-	   return height;
-   }
-   
-   public Color getColor()
-   {
-	   return color;
-   }
-   
-   public int getSpeed()
-   {
-	   return speed;
+      speed = s;
    }
 
    public void moveUpAndDraw(Graphics window)
    {
-	   draw(window, Color.white);
+	   draw(window,Color.white);
 	   setY(getY()-getSpeed());
 	   draw(window);
-
    }
 
    public void moveDownAndDraw(Graphics window)
    {
-	   draw(window, Color.white);
+	   draw(window,Color.white);
 	   setY(getY()+getSpeed());
 	   draw(window);
+   }
 
-   }
-   
-   public boolean equals(Paddle other)
+   public int getSpeed(  )
    {
-	   if(xPos == other.getX() && yPos == other.getY() && width == other.getWidth() && height == other.getHeight() && speed == other.getSpeed() && color == other.getColor())
-	   {
-		   return true;
-	   }
-	   return false;
+	   return speed;
    }
-   
 
    public String toString()
    {
-	   String output = "";
-	   output += "x pos: " + getX() + "\n";
-	   output += "y pos: " + getY() + "\n";
-	   output += "height: " + getHeight() + "\n";
-	   output += "width: " + getWidth() + "\n";
-	   output += "color: " + getColor() + "\n";
-	   output += "speed: " + getSpeed() + "\n";
-	   return output;
+	   return super.toString()+" "+speed;
    }
 }
