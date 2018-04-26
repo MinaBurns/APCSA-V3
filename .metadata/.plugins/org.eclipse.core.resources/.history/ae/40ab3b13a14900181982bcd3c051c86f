@@ -74,7 +74,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.setColor(Color.BLUE);
 		graphToBack.drawString("StarFighter ", 25, 50 );
 		graphToBack.setColor(Color.BLACK);
-		graphToBack.fillRect(0,0,getWidth(),getHeight());
+		graphToBack.fillRect(0,0,800,600);
 
 		if(keys[0] == true)
 		{
@@ -98,8 +98,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		
 		ship.draw(graphToBack);
 
-		twoDGraph.drawImage(back, null, 0,0);
-		back = null;
+
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 
 	}

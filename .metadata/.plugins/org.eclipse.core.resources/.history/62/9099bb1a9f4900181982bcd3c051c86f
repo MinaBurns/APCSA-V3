@@ -16,8 +16,6 @@ import java.awt.image.BufferedImage;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
@@ -33,7 +31,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	private boolean[] keys;
 	private BufferedImage back;
 
-	public OuterSpace(JFrame par)
+	public OuterSpace()
 	{
 		setBackground(Color.black);
 
@@ -59,8 +57,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	public void paint( Graphics window )
 	{
 		//set up the double buffering to make the game animation nice and smooth
-		Graphics2D twoDGraph = (Graphics2D)window;
-		
+		//Graphics2D twoDGraph = (Graphics2D)window;
+		ship.draw(window);
 		
 		//take a snap shop of the current screen and same it as an image
 		//that is the exact same width and height as the current screen
@@ -74,7 +72,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.setColor(Color.BLUE);
 		graphToBack.drawString("StarFighter ", 25, 50 );
 		graphToBack.setColor(Color.BLACK);
-		graphToBack.fillRect(0,0,getWidth(),getHeight());
+		graphToBack.fillRect(0,0,800,600);
 
 		if(keys[0] == true)
 		{
@@ -96,10 +94,9 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		}
 		//add code to move Ship, Alien, etc.
 		
-		ship.draw(graphToBack);
+		
 
-		twoDGraph.drawImage(back, null, 0,0);
-		back = null;
+
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
 
 	}
