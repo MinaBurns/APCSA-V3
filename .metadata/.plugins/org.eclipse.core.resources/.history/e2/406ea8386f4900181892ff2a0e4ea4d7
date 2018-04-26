@@ -58,8 +58,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 	{
 		//set up the double buffering to make the game animation nice and smooth
 		Graphics2D twoDGraph = (Graphics2D)window;
-		ship.draw(window);
-		
+
 		//take a snap shop of the current screen and same it as an image
 		//that is the exact same width and height as the current screen
 		if(back==null)

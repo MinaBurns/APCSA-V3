@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 
 public class Ship extends MovingThing
 {
-	private int speed=10;
+	private int speed;
 	private Image image;
 
 	public Ship()
