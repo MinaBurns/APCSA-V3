@@ -51,7 +51,7 @@ public class Ammo extends MovingThing
 	{
 		if (direction.equals("UP"))
 		{
-			setY(super.getY()- speed);
+			setY(super.getY()+speed);
 		}
 	}
 

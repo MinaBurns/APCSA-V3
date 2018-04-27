@@ -81,11 +81,11 @@ public class Ship extends MovingThing
 		}
 		if (direction.equals("UP"))
 		{
-			setY(super.getY()+speed);
+			setX(super.getY()+speed);
 		}
 		if (direction.equals("DOWN"))
 		{
-			setY(super.getY()-speed);
+			setX(super.getY()-speed);
 		}
 	}
 

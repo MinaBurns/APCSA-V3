@@ -28,7 +28,7 @@ public class Alien extends MovingThing
 
 	public Alien(int x, int y, int s)
 	{
-		this(x,y,30, 40, s);
+		super(x,y);
 		speed = s;
 	}
 
@@ -40,7 +40,7 @@ public class Alien extends MovingThing
 		{
 			//URL url = getClass().getResource("src/alien.jpg");
 			//image = ImageIO.read(url);
-			image = ImageIO.read(new File("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Starfighter\\alien.JPG"));
+			image = ImageIO.read(new File("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Starfighter\\alien.jpg"));
 		}
 		catch(Exception e)
 		{
@@ -58,16 +58,6 @@ public class Alien extends MovingThing
 	   return speed;
 	}
 
-	public void setX(int x)
-	{
-		super.setX(x);
-	}
-	
-	public void setY(int y)
-	{
-		super.setY(y);
-	}
-	
    public void move(String direction)
 	{
 	   if (direction.equals("LEFT"))

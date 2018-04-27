@@ -28,7 +28,7 @@ public class Alien extends MovingThing
 
 	public Alien(int x, int y, int s)
 	{
-		this(x,y,30, 40, s);
+		super(x,y);
 		speed = s;
 	}
 

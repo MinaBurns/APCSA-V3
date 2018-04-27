@@ -104,7 +104,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		ship.draw(graphToBack);
 		alienOne.draw(graphToBack);
 		alienTwo.draw(graphToBack);
-		ammo.drawEmAll(graphToBack);
+
 		twoDGraph.drawImage(back, null, 0,0);
 		back = null;
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
