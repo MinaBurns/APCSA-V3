@@ -19,8 +19,8 @@ public class AlienHorde
 	public AlienHorde(int size)
 	{
 		aliens = new ArrayList<Alien>(size);
-		int x = 0;
-		int y = 5;
+		int x = 50;
+		int y = 100;
 		int speed = 2;
 		for (int i = 0; i<size; i++)
 		{
@@ -51,21 +51,28 @@ public class AlienHorde
 
 	public void moveEmAll()
 	{
+		
+		for(Alien al : aliens)
+		{
+			al.move("DOWN");
+		}
+		/*
 		for( int i = 0; i<aliens.size(); i++)
 		{
-			if(aliens.get(i).getX()>=750-aliens.get(i).getWidth())
-			{
-				aliens.get(i).move("LEFT");
-			}
+			//if(aliens.get(i).getX()>=750-aliens.get(i).getWidth())
+			//{
+				//aliens.get(i).move("LEFT");
+			//}
 			aliens.get(i).move("RIGHT");	
 		}
+		*/
 	}
 
 	public void removeDeadOnes(List<Ammo> shots)
 	{
-		for(int j = aliens.size(); j>=0; j--)
+		for(int j = 0; j<aliens.size(); j++)
 		{
-			for(int i = 0; j<shots.size(); j++)
+			for(int i = 0; i<shots.size(); i++)
 			{
 				if(shots.get(i).getX() >= aliens.get(j).getX() && shots.get(i).getX() <=aliens.get(j).getX() + 45 && shots.get(i).getY() <=aliens.get(j).getY() +70)
 				{

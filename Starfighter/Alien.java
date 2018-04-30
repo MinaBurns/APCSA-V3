@@ -14,8 +14,8 @@ import javax.imageio.ImageIO;
 public class Alien extends MovingThing
 {
 	private int speed;
-	private int width;
-	private int Xpos;
+	//private int width;
+	//private int Xpos;
 	private Image image;
 
 	public Alien()
@@ -27,7 +27,7 @@ public class Alien extends MovingThing
 	{
 		
 		super(x,y);
-		Xpos=x;
+		//Xpos=x;
 	}
 
 	public Alien(int x, int y, int s)
@@ -36,16 +36,16 @@ public class Alien extends MovingThing
 		
 		this(x,y,30, 40, s);
 		speed = s;
-		Xpos = x;
-		width = 30;
+		//Xpos = x;
+		//width = 30;
 	}
 
 	public Alien(int x, int y, int w, int h, int s)
 	{
 		super(x, y, w,h);
 		speed=s;
-		Xpos = x;
-		width = w;
+		//Xpos = x;
+		//width = w;
 		try
 		{
 			//URL url = getClass().getResource("src/alien.jpg");
@@ -62,12 +62,13 @@ public class Alien extends MovingThing
 	{
 	   speed = s;
 	}
+	
 
 	public int getSpeed()
 	{
 	   return speed;
 	}
-
+/*
 	public void setX(int x)
 	{
 		super.setX(x);
@@ -77,6 +78,8 @@ public class Alien extends MovingThing
 	{
 		super.setY(y);
 	}
+	*/
+	/*
 	
 	public int getWidth()
 	{
@@ -87,9 +90,11 @@ public class Alien extends MovingThing
 	{
 		return Xpos;
 	}
+	*/
 	
    public void move(String direction)
 	{
+	   /*
 	   if (direction.equals("LEFT"))
 		{
 			setX(super.getX()-speed);
@@ -105,12 +110,29 @@ public class Alien extends MovingThing
 		if (direction.equals("DOWN"))
 		{
 			setY(super.getY()-speed);
+			
 		}
+		*/
+	   if(direction.equals("DOWN"))
+	   {
+		   System.out.println("moving alien");
+		   System.out.println("Alien pos:" + getX() + " " + 800);
+		   if(getX() > 800 || getX()<20)
+		   {
+			   System.out.println("alien with bound to move");
+			   speed = -speed;
+			   setY(getY()+25);
+		   }
+		   
+		setX(getX()+getSpeed());
+		System.out.println("alien X coord and speed: " + getX() + " " + getSpeed());
+	   }
 	}
 
 	public void draw( Graphics window )
 	{
    	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
+   	System.out.println("Drawing alien" + getX() + getY());
 	}
 	
 
