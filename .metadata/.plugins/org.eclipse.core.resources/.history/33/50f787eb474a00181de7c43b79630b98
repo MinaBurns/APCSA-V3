@@ -22,7 +22,6 @@ public class Ammo extends MovingThing
 	public Ammo(int x, int y)
 	{
 		super(x,y);
-		setSpeed(3);
 	}
 
 	public Ammo(int x, int y, int s)

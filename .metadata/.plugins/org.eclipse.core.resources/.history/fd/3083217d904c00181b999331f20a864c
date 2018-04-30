@@ -14,8 +14,6 @@ import javax.imageio.ImageIO;
 public class Alien extends MovingThing
 {
 	private int speed;
-	private int width;
-	private int Xpos;
 	private Image image;
 
 	public Alien()
@@ -25,27 +23,19 @@ public class Alien extends MovingThing
 
 	public Alien(int x, int y)
 	{
-		
 		super(x,y);
-		Xpos=x;
 	}
 
 	public Alien(int x, int y, int s)
 	{
-		
-		
 		this(x,y,30, 40, s);
 		speed = s;
-		Xpos = x;
-		width = 30;
 	}
 
 	public Alien(int x, int y, int w, int h, int s)
 	{
 		super(x, y, w,h);
 		speed=s;
-		Xpos = x;
-		width = w;
 		try
 		{
 			//URL url = getClass().getResource("src/alien.jpg");
@@ -78,16 +68,6 @@ public class Alien extends MovingThing
 		super.setY(y);
 	}
 	
-	public int getWidth()
-	{
-		return width;
-	}
-	
-	public int getX()
-	{
-		return Xpos;
-	}
-	
    public void move(String direction)
 	{
 	   if (direction.equals("LEFT"))
@@ -112,7 +92,6 @@ public class Alien extends MovingThing
 	{
    	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
 	}
-	
 
 	public String toString()
 	{
