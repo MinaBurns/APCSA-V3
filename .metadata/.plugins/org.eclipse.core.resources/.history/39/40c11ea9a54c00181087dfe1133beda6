@@ -43,23 +43,9 @@ public class Bullets
 		}
 	}
 
-	public void cleanEmUp(Graphics window)
+	public void cleanEmUp(Ammo ammo1)
 	{
-		for(int i = 0; i<ammo.size(); i++)
-		{
-			if(ammo.get(i).getY()<-5)
-			{
-				ammo.get(i).setSpeed(0);
-			}
-			window.setColor(Color.black);
-			window.fillRect(ammo.get(i).getX(), ammo.get(i).getY(), 5, 7);
-			if(ammo.get(i).getSpeed()==0)
-			{
-				window.setColor(Color.black);
-				window.fillRect(ammo.get(i).getX(), ammo.get(i).getY(), 5, 7);
-				ammo.remove(i);
-			}
-		}
+		ammo.remove(ammo1);
 	}
 
 	public List<Ammo> getList()

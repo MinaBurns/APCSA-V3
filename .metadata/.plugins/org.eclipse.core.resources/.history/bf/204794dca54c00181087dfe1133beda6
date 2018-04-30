@@ -21,14 +21,14 @@ import javax.swing.JFrame;
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
-	//private AlienHorde alienOne;
+	private AlienHorde alienOne;
 	//private Alien alienTwo;
 
 	
    private AlienHorde horde;
 
-	private Bullets shots = new Bullets();
-	//private boolean game;
+	private Bullets ammo = new Bullets();
+
 	private boolean[] keys;
 	private BufferedImage back;
 
@@ -40,9 +40,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 		//instantiate other instance variables
 		//Ship, Alien
-		ship = new Ship(350, 450, 80, 80, 2);
+		ship = new Ship(350, 450, 2);
 		horde = new AlienHorde(5);
-		shots = new Bullets();
 		//alienTwo = new Alien(200, 100, 13);
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -95,19 +94,17 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		}
 		if(keys[4]==true)
 		{
-			shots.add(new Ammo(ship.getX()+25, ship.getY(), -1));
+			ammo.add(new Ammo(ship.getX()+(ship.getWidth()/2), ship.getY(), 3));
 			keys[4]=false;
 		}
 		//add code to move Ship, Alien, etc.
 		
 		ship.draw(graphToBack);
-		shots.cleanEmUp(graphToBack);
-		//alienTwo.draw(graphToBack);
-		shots.moveEmAll();
-		shots.drawEmAll(graphToBack);
 		horde.drawEmAll(graphToBack);
-		horde.removeDeadOnes(shots.getList());
-		
+		//alienTwo.draw(graphToBack);
+		ammo.drawEmAll(graphToBack);
+		ammo.moveEmAll();
+		horde.removeDeadOnes(ammo.getList());
 		twoDGraph.drawImage(back, null, 0,0);
 		back = null;
 		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
