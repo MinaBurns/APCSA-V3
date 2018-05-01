@@ -115,24 +115,24 @@ public class Alien extends MovingThing
 		*/
 	   if(direction.equals("DOWN"))
 	   {
-		   //System.out.println("moving alien");
-		   //System.out.println("Alien pos:" + getX() + " " + 800);
+		   System.out.println("moving alien");
+		   System.out.println("Alien pos:" + getX() + " " + 800);
 		   if(getX() > 800 || getX()<20)
 		   {
-			   //System.out.println("alien with bound to move");
+			   System.out.println("alien with bound to move");
 			   speed = -speed;
 			   setY(getY()+25);
 		   }
 		   
 		setX(getX()+getSpeed());
-		//System.out.println("alien X coord and speed: " + getX() + " " + getSpeed());
+		System.out.println("alien X coord and speed: " + getX() + " " + getSpeed());
 	   }
 	}
 
 	public void draw( Graphics window )
 	{
    	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
-   	//System.out.println("Drawing alien" + getX() + getY());
+   	System.out.println("Drawing alien" + getX() + getY());
 	}
 	
 

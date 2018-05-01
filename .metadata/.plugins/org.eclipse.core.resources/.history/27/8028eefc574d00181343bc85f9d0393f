@@ -43,7 +43,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		ship = new Ship(350, 450, 80, 80, 2);
 		horde = new AlienHorde(5);
 		shots = new Bullets();
-		butterfly = new Butterfly(500, 100, 80, 80, 3);
+		butterfly = new Butterfly(500, 100, 80, 80, 7);
 		//alienTwo = new Alien(200, 100, 13);
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -76,6 +76,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,getWidth(),getHeight());
 		
+		horde.moveEmAll();
+		shots.moveEmAll();
 		butterfly.move("DOWN");
 		ship.draw(graphToBack);
 		//shots.cleanEmUp(graphToBack);
@@ -83,35 +85,8 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		shots.drawEmAll(graphToBack);
 		butterfly.draw(graphToBack);
 		horde.drawEmAll(graphToBack);
-		
-		
 		shots.cleanEmUp(graphToBack);
 		horde.removeDeadOnes(shots.getList());
-		
-		boolean game =true;
-		
-		if(game == true)
-		{
-			horde.moveEmAll();
-			shots.moveEmAll();
-		}
-		
-		if(butterfly.uhOh(ship, graphToBack) == true)
-		{
-			graphToBack.clearRect(0, 0, 800, 600);
-			//window.setColor(Color.black);
-			graphToBack.drawString("Sorry, you lost!", 400, 300);
-		}
-
-
-		if(game==false)
-		{
-			graphToBack.clearRect(0, 0, 800, 600);
-			//window.setColor(Color.black);
-			graphToBack.drawString("Sorry, you lost!", 400, 300);
-		}
-
-		
 		
 		if(keys[0] == true)
 		{

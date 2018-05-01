@@ -1,36 +1,30 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date - 
-//Class -
-//Lab  -
-
 import java.io.File;
 import java.net.URL;
+import java.util.List;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 
-public class Alien extends MovingThing
-{
+public class Butterfly extends MovingThing {
 	private int speed;
 	//private int width;
 	//private int Xpos;
 	private Image image;
 
-	public Alien()
+	public Butterfly()
 	{
 		this(0,0,30,30,0);
 	}
 
-	public Alien(int x, int y)
+	public Butterfly(int x, int y)
 	{
 		
 		super(x,y);
 		//Xpos=x;
 	}
 
-	public Alien(int x, int y, int s)
+	public Butterfly(int x, int y, int s)
 	{
 		
 		
@@ -40,7 +34,7 @@ public class Alien extends MovingThing
 		//width = 30;
 	}
 
-	public Alien(int x, int y, int w, int h, int s)
+	public Butterfly(int x, int y, int w, int h, int s)
 	{
 		super(x, y, w,h);
 		speed=s;
@@ -50,11 +44,11 @@ public class Alien extends MovingThing
 		{
 			//URL url = getClass().getResource("src/alien.jpg");
 			//image = ImageIO.read(url);
-			image = ImageIO.read(new File("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Starfighter\\alien.JPG"));
+			image = ImageIO.read(new File("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Starfighter\\butterfly.png"));
 		}
 		catch(Exception e)
 		{
-			System.out.println("error in Alien");
+			System.out.println("error in Butterfly");
 		}
 	}
 
@@ -133,6 +127,20 @@ public class Alien extends MovingThing
 	{
    	window.drawImage(image,getX(),getY(),getWidth(),getHeight(),null);
    	//System.out.println("Drawing alien" + getX() + getY());
+	}
+	
+	
+	public void uhOh(List<Ammo> shots, Graphics window)
+	{
+		for(int i = 0; i<shots.size(); i++)
+		{
+			if(shots.get(i).getX() >= this.getX() && shots.get(i).getX() <=this.getX() + 45 && shots.get(i).getY() <=this.getY() +70)
+			{
+				window.clearRect(0, 0, 800, 600);
+				//window.setColor(Color.black);
+				window.drawString("Sorry, you lost!", 400, 300);
+			}
+		}
 	}
 	
 

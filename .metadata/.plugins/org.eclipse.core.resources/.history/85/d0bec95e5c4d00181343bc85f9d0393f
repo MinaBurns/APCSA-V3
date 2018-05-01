@@ -83,34 +83,34 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		shots.drawEmAll(graphToBack);
 		butterfly.draw(graphToBack);
 		horde.drawEmAll(graphToBack);
-		
+		horde.moveEmAll();
+		shots.moveEmAll();
 		
 		shots.cleanEmUp(graphToBack);
 		horde.removeDeadOnes(shots.getList());
 		
+		/*
 		boolean game =true;
 		
 		if(game == true)
 		{
-			horde.moveEmAll();
-			shots.moveEmAll();
+			
 		}
+		*/
 		
-		if(butterfly.uhOh(ship, graphToBack) == true)
+		if(butterfly.uhOh(ship, graphToBack)==false)
 		{
 			graphToBack.clearRect(0, 0, 800, 600);
 			//window.setColor(Color.black);
 			graphToBack.drawString("Sorry, you lost!", 400, 300);
 		}
 
-
+		/*
 		if(game==false)
 		{
-			graphToBack.clearRect(0, 0, 800, 600);
-			//window.setColor(Color.black);
-			graphToBack.drawString("Sorry, you lost!", 400, 300);
+			
 		}
-
+		*/
 		
 		
 		if(keys[0] == true)
