@@ -139,7 +139,7 @@ public class Butterfly extends MovingThing {
 					&& (( ship.getY()+55 >=this.getY() && ship.getY() +55 <= this.getY()+50) 
 					|| (this.getY() <=ship.getY() && ship.getY()<=this.getY()+50)))
 			*/
-		if(ship.getX() >= this.getX() && ship.getX() <=this.getX() + 45 && ship.getY() <=this.getY() +70)	
+		if(ship.getX() >= this.getX() && ship(i).getX() <=this.getX() + 45 && ship.getY() <=this.getY() +70)	
 		{
 				collide = true;
 			}

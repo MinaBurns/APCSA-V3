@@ -103,14 +103,13 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 			graphToBack.drawString("Sorry, you lost!", 400, 300);
 		}
 
-/*
+
 		if(game==false)
 		{
 			graphToBack.clearRect(0, 0, 800, 600);
 			//window.setColor(Color.black);
 			graphToBack.drawString("Sorry, you lost!", 400, 300);
 		}
-		*/
 
 		
 		
