@@ -130,14 +130,16 @@ public class Butterfly extends MovingThing {
 	}
 	
 	
-	public boolean uhOh(Ship ship, Graphics window)
+	public boolean collision(Ship ship, Graphics window)
 	{
 		boolean collide =false;
-			if(ship.getX() >= this.getX() && ship.getX() <=this.getX() + 45 && ship.getY() <=this.getY() +70)
+			if( ((ship.getX() >= this.getX() && ship.getX() <=this.getX() + 45) 
+					|| (ship.getX() +50 <=this.getY() && ship.getX()+50 <=this.getX()+45)) 
+					&& (( ship.getY()+55 >=this.getY() && ship.getY() +55 <= this.getY()+50) 
+					|| (this.getY() <=ship.getY() && ship.getY()<=this.getY()+50)))
 			{
 				collide = true;
 			}
-		
 		
 		return collide;
 	}

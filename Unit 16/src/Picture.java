@@ -377,6 +377,22 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void chromakey(Picture image)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel[][] newpixels = image.getPixels2D();
+	    for (int row = 0; row<pixels.length; row++)
+	    {
+	      for (int col = 0; col<pixels[row].length; col++)
+	      {
+	        if(pixels[row][col].getBlue()>pixels[row][col].getRed())
+	        {
+	        	pixels[row][col].setColor(newpixels[row][col].getColor());
+	        }
+	      }
+	    }
+	    System.out.println("Mina Burns Period 1" + "\n" + "Computer: 09" + "\n" +  "Date: 5/1/18");
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 

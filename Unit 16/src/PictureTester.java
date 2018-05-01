@@ -97,6 +97,15 @@ public class PictureTester
 	  image.explore();
   }
   
+  public static void testChromakey()
+  {
+	  Picture mark = new Picture ("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Unit16\\pixLab\\images\\blue-mark.jpg");
+	  Picture moon = new Picture("C:\\Users\\burnsc6389\\Desktop\\APCSA-V3\\Unit16\\pixLab\\images\\moon-surface.jpg");
+	  mark.chromakey(moon);
+	  mark.explore();
+	  //moon.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -107,20 +116,21 @@ public class PictureTester
     //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
-    testKeepOnlyGreen();
+    //testKeepOnlyGreen();
     //testNegate();
     //testGrayscale();
     //testFixUnderwater(); not this
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorHorizontal();
     //testMirrorHorizontalBotTop();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
+	  testChromakey();
 
   }
 }
