@@ -76,41 +76,50 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,getWidth(),getHeight());
 		
-		butterfly.move("DOWN");
+		
 		ship.draw(graphToBack);
 		//shots.cleanEmUp(graphToBack);
 		//alienTwo.draw(graphToBack);
 		shots.drawEmAll(graphToBack);
 		butterfly.draw(graphToBack);
 		horde.drawEmAll(graphToBack);
-		
+		shots.moveEmAll();
 		
 		shots.cleanEmUp(graphToBack);
 		horde.removeDeadOnes(shots.getList());
 		
 		boolean game =true;
 		
-		if(game == true)
-		{
-			horde.moveEmAll();
-			shots.moveEmAll();
-		}
+		
 		
 		if(butterfly.collision(ship, graphToBack) == true)
 		{
-			graphToBack.clearRect(0, 0, 800, 600);
-			//window.setColor(Color.black);
-			graphToBack.drawString("Sorry, you lost!", 400, 300);
+			game = false;
 		}
 
-
+		if(horde.Win())
+		{
+			graphToBack.clearRect(0, 0, 800, 600);
+			//window.setColor(Color.black);
+			graphToBack.setColor(Color.CYAN);
+			graphToBack.drawString("You win!", 400, 300);
+		}
+		
+		if(game == true)
+		{
+			horde.moveEmAll();
+			//shots.moveEmAll();
+			butterfly.move("DOWN");
+		} 
+		
 		if(game==false)
 		{
 			graphToBack.clearRect(0, 0, 800, 600);
 			//window.setColor(Color.black);
+			graphToBack.setColor(Color.CYAN);
 			graphToBack.drawString("Sorry, you lost!", 400, 300);
-		}
-
+		} 
+		
 		
 		
 		if(keys[0] == true)

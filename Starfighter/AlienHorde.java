@@ -86,6 +86,15 @@ public class AlienHorde
 			}
 		}
 	}
+	
+	public boolean Win()
+	{
+		if(aliens.size()==0)
+		{
+			return true;
+		}
+		return false;
+	}
 
 	public String toString()
 	{
