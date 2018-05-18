@@ -104,8 +104,10 @@ public class Ball extends Block implements Collide
  @Override
 public boolean didCollideLeft(Object obj) {
 	// TODO Auto-generated method stub
-	Paddle paddle = (Paddle)obj;
-	if (getX()<=paddle.getX()+paddle.getWidth()&&getX()>paddle.getX()&&(getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+		
+	 Paddle paddle = (Paddle)obj;
+	if (getX()+getWidth()>=paddle.getX() && getX()<paddle.getX()&&(getY()+getHeight()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+		System.out.println("collide left");
 		return true;
 	}
 	return false;
@@ -114,7 +116,8 @@ public boolean didCollideLeft(Object obj) {
 @Override
 public boolean didCollideRight(Object obj) {
 	Paddle paddle = (Paddle)obj;
-	if (getX()+getWidth()>=paddle.getX()&&getX()<paddle.getX()&&(getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+	if (getX()+getWidth()<paddle.getX()+paddle.getWidth() && getX() > paddle.getX()&&(getY()+getHeight()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())){
+		System.out.println("collide right");
 		return true;
 	}
 	return false;
@@ -123,28 +126,75 @@ public boolean didCollideRight(Object obj) {
 @Override
 public boolean didCollideTop(Object obj) {
 	Paddle paddle = (Paddle)obj;
-	if (getY()+getHeight()>=paddle.getY() && getY() < paddle.getY()+paddle.getHeight() && (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
-		//if ((getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())
-			//	||getY()>=paddle.getY() && getY()<paddle.getY()+paddle.getHeight()){
-			return true;
-		}
+	if ((getY()+getHeight()>=paddle.getY() && getY()<paddle.getY() )&& (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
+		System.out.println("collide top");
+		return true;
+	}
 		return false;
 }
+
+//getY() <= paddle.getY()+paddle.getHeight()
+//&& getX()+getWidth()<=paddle.getX()+paddle.getWidth()
+
 
 @Override
 public boolean didCollideBottom(Object obj) {
 	// TODO Auto-generated method stub
 	Paddle paddle = (Paddle) obj;
-	if (getY()+getHeight()>paddle.getY() && getY() <= paddle.getY()+paddle.getHeight() && (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
-	//if ((getY()>=paddle.getY() && getY()<=paddle.getY()+paddle.getHeight())
-			//||getY()+getHeight()>=paddle.getY()&&getY()+getHeight()<paddle.getY()+paddle.getHeight()){
+	if (getY()>=paddle.getY() && getY() < paddle.getY()+paddle.getHeight() && (getX()>=paddle.getX() && getX()+getWidth()<=paddle.getX()+paddle.getWidth())){
+		System.out.println("collide bottom");		
+		return true;
+		}
+	return false;
+}
+
+
+
+public boolean didCollideLeftTile(Tile obj) {
+	Tile tile = (Tile)obj;
+	if(getX()<20)
+	{
+	System.out.println("ball: " + getX());
+	System.out.println("tile: " + tile.getX());
+	}
+	
+	if (getX()<=tile.getX()+tile.getWidth()+4 &&getX()>tile.getX()&&(getY()>=tile.getY() && getY()<=tile.getY()+tile.getHeight())){
+		
+		return true;
+	}
+	return false;
+}
+
+
+public boolean didCollideRightTile(Tile obj) {
+	
+	Tile tile = (Tile)obj;
+	if (getX()+getWidth()>=tile.getX()&&getX()<tile.getX()&&(getY()>=tile.getY() && getY()<=tile.getY()+tile.getHeight())){
+		return true;
+	}
+	return false;
+}
+
+
+public boolean didCollideTopTile(Tile obj) {
+	
+	Tile tile = (Tile)obj;
+	if (getY()+getHeight()>=tile.getY() && getY() < tile.getY()+tile.getHeight() && (getX()>=tile.getX() && getX()+getWidth()<=tile.getX()+tile.getWidth())){
+		
+			return true;
+		}
+		return false;
+}
+
+public boolean didCollideBottomTile(Tile obj) {
+	Tile tile = (Tile)obj;
+	if (getY() >= tile.getY() && getY()<= tile.getY() + tile.getHeight() && (getX()>=tile.getX() && getX()+getWidth()<=tile.getX()+tile.getWidth()))
+	{
 				return true;
 						
 			}
 	return false;
 }
-
-
 
 
 }

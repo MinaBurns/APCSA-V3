@@ -8,23 +8,24 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ball2"/>
+			<item value="leftpoints"/>
 			<item value="main"/>
 			<item value="main void"/>
 			<item value="drawString"/>
 			<item value="getY"/>
 			<item value="setcolor"/>
 			<item value="elevensboard"/>
-			<item value="islegal"/>
-			<item value="decksize"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="284" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="391" key="DIALOG_HEIGHT"/>
-		<item value="778" key="DIALOG_X_ORIGIN"/>
-		<item value="268" key="DIALOG_Y_ORIGIN"/>
+		<item value="584" key="DIALOG_X_ORIGIN"/>
+		<item value="425" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
